@@ -1,0 +1,13 @@
+.Toolbar{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    font-family: "Marck Script", cursive;
+
+}
+
+@media (max-width: 799px) {
+    .Toolbar{
+        display: none;
+    }
+}

@@ -1,0 +1,23 @@
+.NavigationItems{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavigationItems li:last-child{
+    margin: 0 10px 0 0;
+}
+
+@media (min-width: 1024px) {
+    .NavigationItems{
+        flex-flow: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}

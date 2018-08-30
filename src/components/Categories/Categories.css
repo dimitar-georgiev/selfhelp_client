@@ -1,0 +1,47 @@
+/*.Categories{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*margin: 50px 0;*/
+    /*!*margin-top: -50px;*!*/
+    /*display: flex;*/
+    /*flex-flow: wrap;*/
+    /*!*flex-wrap: wrap;*!*/
+    /*!*justify-content: space-between;*!*/
+    /*justify-content: space-evenly;*/
+    /*align-items: center;*/
+    /*!*align-content: flex-start;*!*/
+    /*!*background: #ccc;*!*/
+    /*box-sizing: border-box;*/
+    /*!*padding-right: 3px;*!*/
+    /*!*margin-bottom: 50px;*!*/
+/*}*/
+
+/*.Categories div:last-child{*/
+    /*!*margin-bottom: 70px;*!*/
+/*}*/
+
+/*!*.Categories div{*!*/
+    /*!*width: 250px;*!*/
+    /*!*height: 250px;*!*/
+    /*!*background: darkorange;*!*/
+    /*!*margin: 50px 0 0 0;*!*/
+/*!*}*!*/
+
+.Categories{
+    /*background: red;*/
+    /*background: #ccc;*/
+    /*display: grid;*/
+    /*grid-gap: 52px;*/
+    /*grid-template-columns: repeat(auto-fit, 250px);*/
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.GridContainer{
+    /*margin: 50px auto;*/
+    /*background: #ccc;*/
+    display: grid;
+    grid-gap: 52px;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: center;
+}

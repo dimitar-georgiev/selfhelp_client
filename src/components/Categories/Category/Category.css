@@ -1,0 +1,101 @@
+/*.Category{*/
+    /*font-family: "Marck Script", cursive;*/
+    /*font-size: 2em;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+    /*color: floralwhite;*/
+    /*!*text-shadow: 1px 1px #333;*!*/
+/*}*/
+
+/*.Category img{*/
+    /*width: 250px;*/
+    /*height: 250px;*/
+    /*display: block;*/
+    /*border-radius: 7px 7px 0 0 ;*/
+/*}*/
+
+/*.Category div{*/
+    /*width: 250px;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*!*align-content: center;*!*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*height: 100px;*/
+    /*background: darkorange;*/
+    /*padding: 10px;*/
+    /*box-sizing: border-box;*/
+    /*box-shadow: 1px 1px 1px 0 #aaa, 1px 2px 1px 0 #333;*/
+    /*border-radius: 0 0 7px 7px;*/
+/*}*/
+
+
+.CategoryContainer{
+    perspective: 1000px;
+}
+
+.CategoryContainer:hover .Category{
+    transform: rotateY(180deg);
+}
+
+.CategoryContainer, .CategoryFront, .CategoryBack{
+    width: 250px;
+    height: 350px;
+}
+
+.Category{
+    font-family: "Marck Script", cursive;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: floralwhite;
+    /*text-shadow: 1px 1px #333;*/
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.CategoryFront, .CategoryBack{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.CategoryFront{
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.CategoryBack{
+    /*background: #2b81af;*/
+    /*background: linear-gradient (rgba(0, 0, 0, 0.16) 16%, rgba(0, 0, 0, 0.25) 100%);*/
+    transform: rotateY(180deg);
+    border-radius: 7px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 1px #999;
+    border: 1px solid #ccc;
+}
+
+.Category img{
+    width: 250px;
+    height: 250px;
+    display: block;
+    border-radius: 7px 7px 0 0 ;
+}
+
+.Caption{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    /*align-content: center;*/
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    background: darkorange;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px 0 #aaa, 1px 2px 1px 0 #333;
+    border-radius: 0 0 7px 7px;
+}

@@ -1,0 +1,82 @@
+.GridContainer{
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+
+@media (max-width: 1023px) and (min-width: 100px) {
+    .Content{
+        background: greenyellow;
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .LeftAdvertisementArea{
+        background: salmon;
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .RightAdvertisementArea{
+        display: none;
+    }
+}
+
+@media (max-width: 1459px) and (min-width: 1024px){
+    .GridContainer{
+        /*width: 1024px;*/
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .Content{
+        background: greenyellow;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .LeftAdvertisementArea{
+        background: salmon;
+        grid-column: 1/2;
+        grid-row: 1/4;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .RightAdvertisementArea{
+        display: none;
+    }
+}
+
+@media (min-width: 1460px) {
+    .GridContainer{
+        margin: 0 auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    /*.Content{*/
+        /*top: 50px;*/
+        /*position: sticky;*/
+    /*}*/
+
+    .LeftAdvertisementArea{
+        background: salmon;
+        grid-column: 1/2;
+        grid-row: 1/-1;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .RightAdvertisementArea{
+        display: block;
+        background: salmon;
+        grid-column: 3/4;
+        grid-row: 1/4;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        box-sizing: border-box;
+
+    }
+}

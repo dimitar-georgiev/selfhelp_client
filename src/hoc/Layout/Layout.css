@@ -1,0 +1,141 @@
+.GridContainer{
+    width: 900px;
+    min-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 900px;
+    grid-template-rows: auto auto auto auto;
+}
+
+.LeftAdvertisementArea{
+    background: salmon;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.RightAdvertisementArea{
+    display: none;
+}
+
+.Content{
+    background: greenyellow;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    /*position: sticky;*/
+    /*top: 0;*/
+}
+
+@media only screen
+and (max-width: 360px)
+and (orientation: portrait)
+{
+    .GridContainer{
+        /*width: 360px;*/
+        /*max-width: 900px;*/
+        margin: 0 auto;
+        display: grid;
+        /*grid-template-columns: 360px;*/
+        grid-template-rows: auto auto auto auto;
+        /*background-position: center center !important;*/
+        /*background-attachment: scroll;*/
+        font-size: 0.8em;
+    }
+
+    .Content{
+        background: red;
+    }
+}
+
+@media only screen
+and (max-width: 598px)
+/*and (orientation: landscape)*/
+{
+
+    .GridContainer{
+        /*width: 100%;*/
+        /*max-width: 900px;*/
+        margin: 0 auto;
+        display: grid;
+        /*grid-template-columns: 592px;*/
+        grid-template-rows: auto auto auto auto;
+        /*background-position: center center !important;*/
+        /*background-attachment: scroll;*/
+        font-size: 0.8em;
+    }
+
+    .Content{
+        background: orange;
+    }
+}
+
+
+@media (min-width: 1081px) {
+    .GridContainer{
+        width: 1070px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 160px 900px;
+    }
+
+    .LeftAdvertisementArea{
+        background: salmon;
+        grid-column: 1/2;
+        grid-row: 1/4;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        box-sizing: border-box;
+    }
+
+    .RightAdvertisementArea{
+        display: none;
+    }
+
+    .Content{
+        background: red;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}
+
+@media (min-width: 1279px) {
+    .GridContainer{
+        width: 1150px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 250px 900px;
+    }
+}
+
+@media (min-width: 1439px) {
+    .GridContainer{
+        width: 1210px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 250px 960px;
+    }
+
+}
+
+@media (min-width: 1599px) {
+    .GridContainer{
+        width: 1460px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 250px 960px 250px;
+        /*box-sizing: border-box;*/
+    }
+
+    .RightAdvertisementArea{
+        display: block;
+        background: salmon;
+        grid-column: 3/4;
+        grid-row: 1/4;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        /*padding: 5px;*/
+        box-sizing: border-box;
+    }
+
+}

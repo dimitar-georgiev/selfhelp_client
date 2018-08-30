@@ -1,0 +1,41 @@
+.Footer {
+    background: slateblue;
+    height: 100px;
+    grid-row: 4/-1;
+    grid-column: 1/2;
+    /*position: sticky;*/
+    /*bottom: 0;*/
+}
+
+/*@media (max-width: 1023px) and (min-width: 100px){*/
+
+/*}*/
+
+@media (max-width: 1459px) and (min-width: 1024px) {
+    .Footer{
+        /*background: slateblue;*/
+        /*height: 100px;*/
+        grid-column: 2/3;
+        grid-row: 3/4;
+        /*position: sticky;*/
+        /*bottom: 0;*/
+    }
+}
+
+@media (min-width: 1460px) {
+    .Footer{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+}
+
+/*@media (min-width: 1081px) {*/
+    /*.Footer{*/
+        /*background: slateblue;*/
+        /*height: 100px;*/
+        /*grid-row-start: 3;*/
+        /*grid-column: 2/3;*/
+        /*!*position: sticky;*!*/
+        /*bottom: 0;*/
+    /*}*/
+/*}*/

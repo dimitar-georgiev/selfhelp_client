@@ -1,0 +1,21 @@
+.Caption{
+    font-family: "Marck Script", cursive;
+    font-size: 5vmin;
+}
+
+
+@media (min-width: 1024px) {
+    .Caption{
+        width: 48%;
+        font-size: 3.5em;
+        z-index: 150;
+        color: darkorange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px #fff;
+        padding-left: 40px;
+        box-sizing: border-box;
+        font-style: oblique;
+    }
+}
