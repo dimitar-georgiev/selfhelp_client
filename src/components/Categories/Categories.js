@@ -23,7 +23,6 @@ const Categories = (props) => (
             <CategoryTile categoryImage={happiness} caption="Happiness"/>
             <CategoryTile categoryImage={motivation} caption="Motivation"/>
             <CategoryTile categoryImage={meditation} caption="Meditation" description="Test Description. Test Description. Test Description. Test Description. Test Description. Test Description."/>
-            {/*<Category/>*/}
         </div>
     </div>
 );
