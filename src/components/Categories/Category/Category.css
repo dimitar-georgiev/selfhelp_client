@@ -73,6 +73,11 @@
     transform: rotateY(180deg);
     border-radius: 7px;
     padding: 10px;
+    color: #000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.45em;
+    font-weight: 100;
+    text-align: start;
     box-sizing: border-box;
     box-shadow: 2px 2px 1px #999;
     border: 1px solid #ccc;

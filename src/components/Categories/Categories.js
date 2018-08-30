@@ -19,10 +19,10 @@ const Categories = (props) => (
         <div className={classes.GridContainer}>
             <Category categoryImage={depression} caption="Depression"/>
             <Category categoryImage={alternativeMedicine} caption="Alternative Medicine"/>
-            <Category categoryImage={anger} caption="Anger Management"/>
+            <Category categoryImage={anger} caption="Anger Management" description="Test Description. Test Description. Test Description. Test Description. Test Description. Test Description."/>
             <Category categoryImage={happiness} caption="Happiness"/>
             <Category categoryImage={motivation} caption="Motivation"/>
-            <Category categoryImage={meditation} caption="Meditation"/>
+            <Category categoryImage={meditation} caption="Meditation" description="Test Description. Test Description. Test Description. Test Description. Test Description. Test Description."/>
             {/*<Category/>*/}
         </div>
     </div>

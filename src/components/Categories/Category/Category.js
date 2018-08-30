@@ -19,7 +19,7 @@ const Category = (props) => (
             </div>
 
             <div className={classes.CategoryBack}>
-
+                {props.description}
             </div>
         </div>
     </div>
