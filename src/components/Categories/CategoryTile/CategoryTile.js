@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-import classes from './Category.css';
+import classes from './CategoryTile.css';
 
 const Category = (props) => (
     <div className={classes.CategoryContainer}>
