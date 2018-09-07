@@ -7,6 +7,7 @@ import {Route, Switch} from 'react-router-dom';
 import Layout from './Layout/Layout';
 // import TestMainContent from '../components/TestContent/TestContent';
 import Categories from '../components/Categories/Categories';
+import CategoryPage from '../components/Categories/CategoryPage/CategoryPage';
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
             <div style={{width: '100%'}}>
                 <Layout>
                     <Switch>
-                        <Route path="/" component={Categories}/>
+                        <Route path="/" component={CategoryPage}/>
                     </Switch>
                 </Layout>
             </div>

@@ -1,0 +1,32 @@
+.CategoryPage{
+
+}
+
+.CategoryName{
+    background: salmon;
+}
+
+.CategoryScope{
+    /*background: darkorange;*/
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.CategoryScope div{
+    width: 500px;
+}
+
+.CategoryLCCN{
+    background: lightseagreen;
+}
+
+.CategorySearchUnder{
+    background: gold;
+}
+
+.CategoryFeaturedBooks{
+    background: darkred;
+}
