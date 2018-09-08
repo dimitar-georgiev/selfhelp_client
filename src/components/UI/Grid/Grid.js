@@ -3,9 +3,9 @@
  */
 import React from 'react';
 
-const Grid = (props) => {
+import Aux from '../../../hoc/Auxs/Auxs';
 
-    let counter = 0;
+const Grid = (props) => {
 
     const propTranslate = {
         boldFirstRow: {location: 'firstRow', value: 'bold'},
@@ -82,8 +82,6 @@ const Grid = (props) => {
         capitalizeLastRow: {location: 'lastRow', value: 'capitalize'},
         capitalizeFirstColumn: {location: 'firstColumn', value: 'capitalize'},
         capitalizeLastColumn: {location: 'lastColumn', value: 'capitalize'},
-
-        //Add textAlign - left, center, right, justify
     };
 
     const cssDefinitions = {
@@ -104,23 +102,7 @@ const Grid = (props) => {
         center: {name: 'justifySelf', value: 'center'}
     };
 
-    console.log('Content elements: ', props.content);
-
-    const locations = {
-        all: [],
-        firstRow: [],
-        lastRow: [],
-        firstColumn: [],
-        lastColumn: []
-    };
-
-    //Fill in locations
-    Object.keys(props).map(element => {
-        if(propTranslate[element]){
-
-            locations[propTranslate[element].location].push(propTranslate[element].value);
-        }
-    });
+    // console.log('Content elements: ', props.content);
 
     const createElement = (counter, content, classes) => {
 
@@ -134,59 +116,119 @@ const Grid = (props) => {
 
         });
 
-        console.log('Classes List: ', elementClasses);
+        // console.log('Classes List: ', elementClasses);
 
         return <div style={elementClasses} key={counter}>{content}</div>;
     };
 
-    console.log('Locations: ', locations);
+    const createContent = (columns, content) => {
 
+        if(columns > 0 && content){
 
-    const content = props.content.map(element => {
-        counter++;
+            const locations = {
+                all: [],
+                firstRow: [],
+                lastRow: [],
+                firstColumn: [],
+                lastColumn: []
+            };
 
-        //Start First Row
-        if(counter === 1){
+            //Fill in locations
+            Object.keys(props).map(element => {
+                if(propTranslate[element]){
 
-            return createElement(counter, element, [locations.all, locations.firstColumn, locations.firstRow]);
+                    locations[propTranslate[element].location].push(propTranslate[element].value);
+                }
+            });
+
+            // console.log('Locations: ', locations);
+
+            let counter = 0;
+
+            const contentLength = content.length;
+
+            let lastElementBody = null;
+
+            if(contentLength % columns === 0){   //balanced grid
+                lastElementBody = contentLength - columns;
+            }
+            else {
+                lastElementBody = contentLength - (contentLength % columns);
+            }
+
+            return content.map(element => {
+                counter++;
+
+                //First Row, First Column
+                if(counter === 1){
+
+                    return createElement(counter, element, [locations.all, locations.firstColumn, locations.firstRow]);
+                }
+                //Other First Row Elements
+                else if(counter < columns){
+
+                    return createElement(counter, element, [locations.all, locations.firstRow]);
+                }
+                //First Row, Last Column
+                else if(counter === columns){
+
+                    return createElement(counter, element, [locations.all, locations.lastColumn, locations.firstRow]);
+                }
+
+                //Body
+                else if(counter <= lastElementBody){
+                    //First Column
+                    if(counter % columns === 1){
+
+                        return createElement(counter, element, [locations.all, locations.firstColumn]);
+                    }
+                    //Last Column
+                    else if(counter % columns === 0){
+
+                        return createElement(counter, element, [locations.all, locations.lastColumn]);
+                    }
+
+                    return createElement(counter, element, [locations.all]);
+                }
+
+                //Last Row
+                else if(counter > lastElementBody){
+
+                    //First Column
+                    if(counter % columns === 1){
+
+                        return createElement(counter, element, [locations.all, locations.firstColumn, locations.lastRow]);
+                    }
+                    //Last Column
+                    else if(counter % columns === 0){
+
+                        return createElement(counter, element, [locations.all, locations.lastColumn, locations.lastRow]);
+                    }
+
+                    return createElement(counter, element, [locations.all, locations.lastRow]);
+                }
+            });
+
         }
+        return null;
+    };
 
-        else if(counter < props.columns){
-            return createElement(counter, element, [locations.all, locations.firstRow]);
-        }
+    const gridContent = createContent(parseInt(props.columns, 10), props.content);
 
-        else if(counter === parseInt(props.columns, 10)){
-
-            return createElement(counter, element, [locations.all, locations.lastColumn, locations.firstRow]);
-        }
-        //End First Row
-
-        //Start Body
-        //First Column Body
-        else if(counter > props.columns && (counter % props.columns === 1)){
-            return createElement(counter, element, [locations.all, locations.firstColumn]);
-        }
-        //Last Column Body
-        else if(counter > props.columns && (counter % props.columns === 0)){
-            return createElement(counter, element, [locations.all, locations.lastColumn]);
-        }
-        //Body Elements other than first and last columns
-        else {
-            return createElement(counter, element, [locations.all]);
-        }
-        //End Body
-
-        //Last Row - development
-    });
-
-    return (
+    const grid = (
         <div style={{
             display: 'grid',
             gridTemplateColumns: `repeat(${props.columns}, 1fr)`,
             justifyContent: 'center', //adjustable?
             gridGap: '20px', //adjustable?
         }}>
-            {content}</div>
+        {gridContent}</div>
+    );
+
+    return (
+        <Aux>
+            {gridContent ? grid : null}
+        </Aux>
     );
 };
 

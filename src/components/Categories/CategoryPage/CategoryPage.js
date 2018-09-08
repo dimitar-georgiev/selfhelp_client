@@ -22,7 +22,7 @@ class CategoryPage extends Component{
     };
 
     flattenContentElements = (elements) => {
-        return [].concat(...Object.keys(this.state.lccn).map(key => [key, this.state.lccn[key]]));
+        return [].concat(...Object.keys(elements).map(key => [key, elements[key]]));
     };
 
     render(){
@@ -55,12 +55,11 @@ class CategoryPage extends Component{
                     <Grid
                         columns="2"
                         content={this.flattenContentElements(this.state.lccn)}
-                        upperCaseFirstColumn
-                        capitalizeLastColumn
                         boldFirstColumn
                         justifyContentFirstColumnRight
+                        upperCaseFirstColumn
                         justifyTextFirstColumnRight
-                        justifyContentLastColumnLeft
+                        capitalizeLastColumn
                     />
 
                 </LabeledContainerPartialBorder>
