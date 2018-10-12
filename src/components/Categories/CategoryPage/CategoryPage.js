@@ -8,6 +8,7 @@ import categoryImage from '../../../assets/images/meditation_cropped.jpg';
 
 import LabeledContainerPartialBorder from '../../UI/LabeledContainerPartialBorder/LabeledContainerPartialBorder';
 import Grid from '../../UI/Grid/Grid';
+import Carousel from '../../Carousel/Carousel';
 
 
 class CategoryPage extends Component{
@@ -70,7 +71,13 @@ class CategoryPage extends Component{
 
                 </LabeledContainerPartialBorder>
 
-                <div className={classes.CategoryFeaturedBooks}>Carousel with Books</div>
+                <Carousel/>
+
+                <div style={{
+                    boxSizing: 'border-box',
+                    padding: '50px',
+                    background: 'salmon'
+                }}>Comments Section</div>
 
             </div>
         );

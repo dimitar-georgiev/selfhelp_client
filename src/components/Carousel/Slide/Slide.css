@@ -1,0 +1,37 @@
+.Slide{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: solid 1px #aaa;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .4s ease-out;
+}
+
+.Position_Zero{
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+}
+
+.Position_One{
+    transform: translate3d(15%, 0, -20px);
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+}
+
+.Position_Two{
+    transform: translate3d(30%, 0, -40px);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+}
+
+.Position_Three{
+    transform: translate3d(-30%, 0, -40px);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+}
+
+.Position_Four{
+    transform: translate3d(-15%, 0, -20px);
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+}
