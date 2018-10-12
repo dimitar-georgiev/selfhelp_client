@@ -1,0 +1,8 @@
+.Carousel{
+    box-sizing: border-box;
+    height: 400px;
+    position: relative;
+    perspective: 100px;
+    transform-style: preserve-3d;
+    margin: 50px auto;
+}

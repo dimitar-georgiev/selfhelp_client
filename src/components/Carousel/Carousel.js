@@ -3,35 +3,16 @@
  */
 import React, {Component} from 'react';
 
+import classes from './Carousel.css';
+
 import Slide from './Slide/Slide';
 
 class Carousel extends Component{
 
     state = {
         slides: ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4', 'Slide 5'],
-        slidesOrder: [0, 1, 2, 3, 4],
-        // slideClasses: ['FarLeft', 'CloseLeft', 'Center', 'CloseRight', 'FarRight'],
-        // selectedSlide: 1
+        slidesOrder: [0, 1, 2, 3, 4]
     };
-
-    //Should take book information and book cover image
-
-    // selectSlide = (slideNum) => {
-    //     // console.log('Selected Slide:', slideNum);
-    //
-    //     this.setState((prevState) => {
-    //         // console.log('Prev State: ', prevState.slides);
-    //
-    //         const oldSlides = prevState.slides;
-    //
-    //         if(slideNum > 0 && slideNum < this.state.slides.length){
-    //             return {slides: oldSlides.concat(oldSlides.splice(0, slideNum))};
-    //         }
-    //
-    //         return null;
-    //     });
-    // };
-
 
     selectSlide = (slideNum) => {
         if(slideNum > 0 && slideNum < this.state.slidesOrder.length){
@@ -67,29 +48,24 @@ class Carousel extends Component{
 
 
     render(){
-        //1# render all elements
-        //2# pass the following props: slideNumber, content, selectSlide
 
-        return <div style={{
-            boxSizing: 'border-box',
-            height: '400px',
-            position: 'relative',
-            perspective: '100px',
-            transformStyle: 'preserve-3d',
-            margin: '50px auto'
-        }}>
-            {/*{this.state.slidesOrder}*/}
-            {/*Selected slide: {this.state.selectedSlide}*/}
-            {this.state.slides.map((slide, index) =>
-                <Slide
-                    key={index}
-                    slideNumber={this.state.slidesOrder[index]}
-                    content={slide}
-                    realIndex={index}
-                    selectSlide={this.selectSlide}
-                />
-            )}
-        </div>;
+        return (
+            <div
+                className={classes.Carousel}
+            >
+                {/*{this.state.slidesOrder}*/}
+                {/*Selected slide: {this.state.selectedSlide}*/}
+                {this.state.slides.map((slide, index) =>
+                    <Slide
+                        key={index}
+                        slideNumber={this.state.slidesOrder[index]}
+                        content={slide}
+                        realIndex={index}
+                        selectSlide={this.selectSlide}
+                    />
+                )}
+            </div>
+        );
     }
 
 }
